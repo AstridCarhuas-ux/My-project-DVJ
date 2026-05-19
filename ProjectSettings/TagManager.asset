@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Suelo
   - Diamante
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -13,8 +14,8 @@ TagManager:
   - Suelo
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Enemy
   - 
   - 
   - 
