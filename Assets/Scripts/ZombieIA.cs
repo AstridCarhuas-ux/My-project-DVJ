@@ -13,6 +13,16 @@ public class ZombieIA : MonoBehaviour
     public float tiempoEntreAtaques = 1.5f;
     private float siguienteAtaque;
 
+    [Header("Efectos de Sonido (NUEVO)")]
+    public AudioClip sonidoGolpePuno;
+    [Range(0f, 1f)] public float volumenGolpe = 0.6f;
+    [Space]
+    public AudioClip sonidoMuerteZombie;
+    [Range(0f, 1f)] public float volumenMuerte = 0.7f;
+    [Space]
+    public AudioClip sonidoDolorPlayer;
+    [Range(0f, 1f)] public float volumenDolorPlayer = 0.6f;
+
     private Rigidbody2D rb;
     private Animator anim;
     private SpriteRenderer sprite;
@@ -78,6 +88,11 @@ public class ZombieIA : MonoBehaviour
         if (playerController != null)
         {
             playerController.RecibirDano(danoEnemigo);
+
+            if (sonidoDolorPlayer != null)
+            {
+                AudioSource.PlayClipAtPoint(sonidoDolorPlayer, jugador.position, volumenDolorPlayer);
+            }
         }
     }
 
@@ -86,6 +101,11 @@ public class ZombieIA : MonoBehaviour
         if (estaMuerto) return;
 
         salud -= cantidad;
+
+        if (sonidoGolpePuno != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoGolpePuno, transform.position, volumenGolpe);
+        }
 
         if (salud <= 0)
         {
@@ -103,6 +123,17 @@ public class ZombieIA : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.gravityScale = 0;
         anim.SetTrigger("Die"); 
+
+        AudioSource sonidoAmbiental = GetComponent<AudioSource>();
+        if (sonidoAmbiental != null)
+        {
+            sonidoAmbiental.Stop(); 
+        }
+
+        if (sonidoMuerteZombie != null)
+        {
+            AudioSource.PlayClipAtPoint(sonidoMuerteZombie, transform.position, volumenMuerte);
+        }
         
         if(GetComponent<CapsuleCollider2D>() != null)
         {

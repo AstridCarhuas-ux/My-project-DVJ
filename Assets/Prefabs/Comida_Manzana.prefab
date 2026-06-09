@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5362783031889124559}
   - component: {fileID: 5339667361049608013}
   - component: {fileID: 4298846003094972983}
+  - component: {fileID: 6286266390209197290}
   m_Layer: 0
   m_Name: Comida_Manzana
   m_TagString: Untagged
@@ -166,3 +167,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComidaCurativa
   cantidadCuracion: 1
   comidaConseguidaSprite: {fileID: 0}
+--- !u!114 &6286266390209197290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5957234570555293327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd4d43cc42a6584282ffd5ce06886a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoComida
+  audioMordida: {fileID: 8300000, guid: b43a44afd401d54448bb42c643fa01ea, type: 3}
+  volumen: 0.5

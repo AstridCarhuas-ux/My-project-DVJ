@@ -59,7 +59,7 @@ public class FinalKey : MonoBehaviour
     {
         if (player.diamantesConseguidos >= totalDiamantesEnNivel && player.comidaConseguida >= totalComidaEnNivel)
         {
-            victoryText.text = "Lograste escapar con los bolsillos llenos de diamantes y el estomago lleno. ¡Bien hecho, sobreviviente!";
+            victoryText.text = "Lograste escapar con los bolsillos llenos de diamantes y el estomago lleno. Bien hecho, sobreviviente!";
         }
         else if (player.diamantesConseguidos >= totalDiamantesEnNivel)
         {

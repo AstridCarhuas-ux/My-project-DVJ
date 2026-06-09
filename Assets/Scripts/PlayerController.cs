@@ -13,9 +13,10 @@ public class PlayerController : MonoBehaviour
     public int danoAtaque = 1;        
 
     [Header("Configuración de Vida y HUD")]
-    public int vidaMaxima = 20; // 20 puntos = 5 corazones (cada uno vale 4)
+    public int vidaMaxima = 20;
     public int vidaActual;
     public HUDVida hudVida;
+    public GameObject gameOverCanvas; 
 
     [Header("Configuración de Inventario")]
     public int diamantesConseguidos = 0;
@@ -116,7 +117,14 @@ public class PlayerController : MonoBehaviour
     void Morir()
     {
         Debug.Log("El jugador ha muerto.");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+        if (gameOverCanvas != null)
+        {
+            gameOverCanvas.SetActive(true);
+        }
+
+        Time.timeScale = 0f;
+        this.enabled = false;
     }
 
     void FixedUpdate()

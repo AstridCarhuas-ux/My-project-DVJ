@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4706954995817967728}
   - component: {fileID: 5793596864185381794}
   - component: {fileID: 2856325392583506235}
+  - component: {fileID: 8776975586956732224}
   m_Layer: 0
   m_Name: Diamante_Azul
   m_TagString: Diamante
@@ -151,3 +152,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8776975586956732224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4890248443938262095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08aacd8d4b6374648ba8a1edf154a6f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoDiamante
+  audioTintineo: {fileID: 8300000, guid: c5038aa97f845674b81e1310b5379f3a, type: 3}
+  volumen: 1

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1860553946585559068}
   - component: {fileID: 6677181230371929909}
   - component: {fileID: 2377060873665195606}
+  - component: {fileID: 3759619082443112592}
   m_Layer: 0
   m_Name: Comida_Pan
   m_TagString: Untagged
@@ -166,3 +167,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComidaCurativa
   cantidadCuracion: 2
   comidaConseguidaSprite: {fileID: 0}
+--- !u!114 &3759619082443112592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365646286672213663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbd4d43cc42a6584282ffd5ce06886a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SonidoComida
+  audioMordida: {fileID: 8300000, guid: b43a44afd401d54448bb42c643fa01ea, type: 3}
+  volumen: 0.5
