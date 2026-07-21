@@ -5,6 +5,7 @@ public class MenuPausa : MonoBehaviour
 {
     public GameObject menuPausaCanvas;
     private bool juegoPausado = false;
+    private AudioSource[] todosLosAudios;
 
     void Update()
     {
@@ -24,8 +25,19 @@ public class MenuPausa : MonoBehaviour
     public void Reanudar()
     {
         menuPausaCanvas.SetActive(false);
-        Time.timeScale = 1f;             
+        Time.timeScale = 1f;            
         juegoPausado = false;
+
+        AudioListener.pause = false;
+
+        todosLosAudios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audio in todosLosAudios)
+        {
+            if (audio != null)
+            {
+                audio.UnPause();
+            }
+        }
     }
 
     void Pausar()
@@ -33,11 +45,24 @@ public class MenuPausa : MonoBehaviour
         menuPausaCanvas.SetActive(true); 
         Time.timeScale = 0f; 
         juegoPausado = true;
+
+        todosLosAudios = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource audio in todosLosAudios)
+        {
+            if (audio != null)
+            {
+                audio.Pause();
+            }
+        }
+
+        AudioListener.pause = true;
     }
 
     public void VolverAlMenu()
     {
         Time.timeScale = 1f; 
+        AudioListener.pause = false;
+
         SceneManager.LoadScene(0);
     }
 }

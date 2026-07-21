@@ -11,9 +11,9 @@ public class FinalKey : MonoBehaviour
 
     [Header("Condiciones de Final Perfecto")]
     [Tooltip("Suma todos los diamantes que hay en el mapa")]
-    public int totalDiamantesEnNivel = 256; 
+    public int totalDiamantesEnNivel = 900; 
     [Tooltip("Suma todas las comidas (manzana, pan, pescado, carne) que hay en el mapa")]
-    public int totalComidaEnNivel = 317;
+    public int totalComidaEnNivel = 1118;
 
     [Header("Animación por Código")]
     public float velocidadFlotar = 3f;
@@ -59,19 +59,19 @@ public class FinalKey : MonoBehaviour
     {
         if (player.diamantesConseguidos >= totalDiamantesEnNivel && player.comidaConseguida >= totalComidaEnNivel)
         {
-            victoryText.text = "Lograste escapar con los bolsillos llenos de diamantes y el estomago lleno. Bien hecho, sobreviviente!";
+            victoryText.text = "Lograste conseguir un refugio, con los bolsillos llenos de diamantes y el estomago lleno. Bien hecho, sobreviviente!";
         }
         else if (player.diamantesConseguidos >= totalDiamantesEnNivel)
         {
-            victoryText.text = "Lograste escapar, y con una fortuna... lastima que en el apocalipsis el dinero ya no te sirva.";
+            victoryText.text = "Lograste sobrevivir, y con una fortuna... lastima que en el apocalipsis el dinero no tenga mucho valor.";
         }
         else if (player.comidaConseguida >= totalComidaEnNivel)
         {
-            victoryText.text = "Lograste escapar, por lo menos con el estomago lleno.";
+            victoryText.text = "Lograste sobrevivir, por lo menos con el estomago lleno.";
         }
         else
         {
-            victoryText.text = "Lograste escapar... por ahora.";
+            victoryText.text = "Lograste protegerte... por ahora.";
         }
     }
 
